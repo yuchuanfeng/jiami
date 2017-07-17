@@ -59,7 +59,7 @@ class FileModel extends Model
 	}
 
 	public function fetchAllFile() {
-		$sql = "SELECT * from file";
+		$sql = "SELECT * from file ORDER BY addTime DESC";
 		$result = $this->_dao->fetchAll($sql);
 		foreach ($result as $row) {
 			$new = array_filter($row, function($key){ // 过滤掉 filePath 字段
